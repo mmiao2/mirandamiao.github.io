@@ -2,76 +2,85 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Your Name - Home</title>
+  <title>Miranda Miao</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Optional: Use a Google Font -->
+  <!-- Example Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
   <style>
-    /* Global Reset/Defaults */
+    /* Global Reset & Box Sizing */
     * {
       box-sizing: border-box;
-    }
-    body {
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: 'Inter', sans-serif;
       background-color: #fafafa;
       color: #333;
+      line-height: 1.6;
     }
 
-    /* Header */
+    /* Container for consistent max-width */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Header & Navigation */
     header {
       background-color: #fff;
       border-bottom: 1px solid #ddd;
-      padding: 1rem;
+      padding: 1rem 0;
     }
-    header .site-title {
-      margin: 0;
+    header .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header h1 {
       font-size: 1.75rem;
       font-weight: 600;
+      margin: 0;
     }
-    header nav a {
-      margin: 0 0.5rem;
+    nav a {
+      margin-left: 1rem;
       text-decoration: none;
       color: #333;
       font-weight: 500;
     }
-    header nav a:hover {
+    nav a:hover {
       text-decoration: underline;
     }
 
     /* Intro Section */
     .intro {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
       text-align: center;
+      margin: 2rem 0;
     }
-    .intro h1 {
-      font-size: 2.25rem;
-      margin-bottom: 0.5rem;
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
     .intro p {
       margin-bottom: 1rem;
-      color: #666;
+      color: #555;
     }
 
     /* Cards Section */
-    .cards-section {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    .cards-section h2 {
-      margin-bottom: 1rem;
+    .section-title {
       font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
     .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1rem;
+      margin-bottom: 2rem;
     }
-    /* Card */
     .card {
       background-color: #fff;
       border: 1px solid #ddd;
@@ -81,19 +90,14 @@
     }
     .card:hover {
       transform: translateY(-3px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
     }
     .card h3 {
-      margin-top: 0;
       margin-bottom: 0.5rem;
     }
     .card p {
-      margin: 0.5rem 0 1rem;
+      margin-bottom: 0.75rem;
       color: #555;
-    }
-    .card .card-meta {
-      font-size: 0.85rem;
-      color: #999;
     }
     .card .button {
       display: inline-block;
@@ -105,90 +109,137 @@
       font-weight: 500;
     }
     .card .button:hover {
-      background-color: #32408f;
+      background-color: #2e3c8f;
+    }
+    .card-meta {
+      font-size: 0.9rem;
+      color: #999;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Link Buttons (Scholar, LinkedIn) */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0 3rem;
+    }
+    .link-button {
+      display: block;
+      text-align: center;
+      padding: 0.75rem;
+      border-radius: 4px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #00897b; /* teal */
+      font-weight: 500;
+      transition: background-color 0.2s ease;
+    }
+    .link-button:hover {
+      background-color: #006e63;
     }
 
     /* Footer */
     footer {
-      margin-top: 2rem;
-      padding: 1rem;
       text-align: center;
-      font-size: 0.9rem;
       color: #888;
+      padding: 1rem 0;
       border-top: 1px solid #ddd;
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- Header -->
   <header>
-    <div style="max-width: 900px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between;">
-      <h1 class="site-title">Your Name</h1>
+    <div class="container nav-bar">
+      <h1>Miranda Miao</h1>
       <nav>
         <a href="#">Home</a>
-        <a href="#">Posts</a>
-        <a href="#">About</a>
+        <a href="#papers">Papers</a>
+        <a href="#links">Links</a>
       </nav>
     </div>
   </header>
 
-  <!-- Intro Section -->
-  <section class="intro">
-    <h1>Hi, I'm [Your Name] <span style="font-size:1.2em;">👋</span></h1>
-    <p>Short bio: where you work, your interests, or a quick welcome message.</p>
+  <!-- Introduction -->
+  <section class="container intro">
+    <h2>Welcome!</h2>
+    <p>
+      I am <strong>Miranda Miao</strong>, a first-year Master's student at the University of Pennsylvania in the Computer Information Science Department. 
+      I am deeply fascinated by the theoretical underpinnings of LLMs —specifically how they maintain truthfulness, uphold fairness, 
+      and develop robust reasoning capabilities. 
+      <br><br>
+      Currently, I’m working on a <em>multi-lingual reasoning</em> project to explore how LLMs reason when utilizing different languages. 
+      I publish under my Chinese name, <strong>Muqing Miao</strong> (<em>meaning “growing green bud”</em>), 
+      in honor of my parents, who did not have the opportunity to attend college.
+    </p>
   </section>
 
-  <!-- Cards Section (Papers, Projects, etc.) -->
-  <section class="cards-section">
-    <h2>Recent Papers</h2>
+  <!-- Papers Section -->
+  <section class="container">
+    <h2 class="section-title" id="papers">My Papers</h2>
     <div class="cards-grid">
 
-      <!-- Card #1 -->
+      <!-- Paper #1 -->
       <div class="card">
-        <h3>Paper Title #1</h3>
-        <p class="card-meta">Conference/Journal • Date</p>
+        <h3>Hallucination, Monofacts, and Miscalibration: An Empirical Investigation</h3>
+        <p class="card-meta">arXiv: <a href="https://arxiv.org/abs/2502.08666" target="_blank">2502.08666</a> (2025)</p>
         <p>
-          Brief summary or abstract. What’s the main topic? Why is it interesting?
+          Recent theoretical work by [Kalai and Vempala 2024] proves that a particular notion of hallucination rate in LLMs 
+          must be lower bounded by the training data monofact rate (related to the classical Good-Turing missing mass estimator) 
+          minus model miscalibration. Through systematic experiments with n-gram models and in-context learning with LLMs, 
+          we empirically investigate and validate this theory by examining how different underlying data distributions affect 
+          the monofact rate and a model's tendency to hallucinate. We then vary model miscalibration through controlled 
+          upweighting of training samples while holding monofact rates constant, allowing us to isolate miscalibration's 
+          reduction effect on hallucination. These findings suggest that both the distribution of fact frequencies in training 
+          data and the calibration-hallucination trade-off are inherent to probabilistic language generation. Our results also 
+          suggest that current practices of aggressive deduplication in training data may need to be reconsidered, as selective 
+          duplication could serve as a principled mechanism for reducing hallucination.
         </p>
-        <a class="button" href="https://example.com/paper1.pdf" target="_blank">View PDF</a>
+        <a class="button" href="https://arxiv.org/abs/2502.08666" target="_blank">View PDF</a>
       </div>
 
-      <!-- Card #2 -->
+      <!-- Paper #2 -->
       <div class="card">
-        <h3>Paper Title #2</h3>
-        <p class="card-meta">Conference/Journal • Date</p>
+        <h3>Multilingual Retrieval Augmented Generation for Culturally-Sensitive Tasks</h3>
+        <p class="card-meta">arXiv: <a href="https://arxiv.org/abs/2410.01171" target="_blank">2410.01171</a> (2024)</p>
         <p>
-          Brief summary or abstract. You can describe your main findings or approach here.
+          The paradigm of retrieval-augmented generation (RAG) helps mitigate hallucinations of large language models (LLMs). 
+          However, RAG also introduces biases contained within the retrieved documents. These biases can be amplified in scenarios 
+          which are multilingual and culturally-sensitive, such as territorial disputes. In this paper, we introduce BordIRLines, 
+          a benchmark consisting of 720 territorial dispute queries paired with 14k Wikipedia documents across 49 languages. 
+          To evaluate LLMs' cross-lingual robustness for this task, we formalize several modes for multilingual retrieval. 
+          Our experiments on several LLMs reveal that retrieving multilingual documents best improves response consistency and 
+          decreases geopolitical bias over using purely in-language documents, showing how incorporating diverse perspectives 
+          improves robustness. Also, querying in low-resource languages displays a much wider variance in the linguistic distribution 
+          of response citations. Our further experiments and case studies investigate how cross-lingual RAG is affected by aspects 
+          from IR to document contents. We release our benchmark and code to support further research towards ensuring equitable 
+          information access across languages.
         </p>
-        <a class="button" href="https://example.com/paper2.pdf" target="_blank">View PDF</a>
+        <a class="button" href="https://arxiv.org/abs/2410.01171" target="_blank">View PDF</a>
       </div>
-
-      <!-- (Optional) Card #3 - Duplicate this block if you want a third panel
-      <div class="card">
-        <h3>Paper Title #3</h3>
-        <p class="card-meta">Conference/Journal • Date</p>
-        <p>
-          Brief summary or abstract. 
-        </p>
-        <a class="button" href="#" target="_blank">View PDF</a>
-      </div>
-      -->
 
     </div>
+  </section>
 
-    <!-- Optional 'More' link -->
-    <div style="margin-top: 1rem;">
-      <a href="#" class="button" style="background-color: #ff9800;">More Papers</a>
+  <!-- Links Section -->
+  <section class="container" id="links">
+    <h2 class="section-title">Connect with Me</h2>
+    <div class="links-grid">
+      <a class="link-button" href="https://scholar.google.com/citations?user=QO6LJz0AAAAJ&hl=en&oi=sra" target="_blank">
+        Google Scholar
+      </a>
+      <a class="link-button" href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank">
+        LinkedIn
+      </a>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>
-      Created by [Your Name] <br>
-      © 2024 [Your Name]. All rights reserved.
-    </p>
+    <p>© 2025 Miranda Miao. All rights reserved.</p>
   </footer>
 
 </body>
