@@ -29,13 +29,13 @@
       padding: 0 1rem;
     }
 
-    /* Header & Navigation */
+    /* Header & Social Icons */
     header {
       background-color: #fff;
       border-bottom: 1px solid #ddd;
       padding: 1rem 0;
     }
-    header .nav-bar {
+    .nav-bar {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -45,20 +45,26 @@
       font-weight: 600;
       margin: 0;
     }
-    nav a {
-      margin-left: 1rem;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
+    .social-icons {
+      display: flex;
+      gap: 0.5rem;
     }
-    nav a:hover {
-      text-decoration: underline;
+    .social-icons a {
+      text-decoration: none;
+      font-size: 1.5rem; /* for emoji icon */
+      color: inherit;
+    }
+    .social-icons svg {
+      vertical-align: middle;
     }
 
-    /* Intro Section */
+    /* Intro (Profile) Section with Lilac Box */
     .intro {
       text-align: center;
       margin: 2rem 0;
+      padding: 1rem;
+      background-color: #f3e5f5; /* very light lilac */
+      border-radius: 8px;
     }
     .intro h2 {
       font-size: 2rem;
@@ -68,8 +74,16 @@
       margin-bottom: 1rem;
       color: #555;
     }
+    /* Profile Image */
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
 
-    /* Cards Section */
+    /* Papers Section */
     .section-title {
       font-size: 1.5rem;
       margin-bottom: 1rem;
@@ -117,28 +131,6 @@
       margin-bottom: 0.5rem;
     }
 
-    /* Link Buttons (Scholar, LinkedIn) */
-    .links-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin: 1rem 0 3rem;
-    }
-    .link-button {
-      display: block;
-      text-align: center;
-      padding: 0.75rem;
-      border-radius: 4px;
-      text-decoration: none;
-      color: #fff;
-      background-color: #00897b; /* teal */
-      font-weight: 500;
-      transition: background-color 0.2s ease;
-    }
-    .link-button:hover {
-      background-color: #006e63;
-    }
-
     /* Footer */
     footer {
       text-align: center;
@@ -151,29 +143,36 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header with Social Icons -->
   <header>
     <div class="container nav-bar">
       <h1>Miranda Miao</h1>
-      <nav>
-        <a href="#">Home</a>
-        <a href="#papers">Papers</a>
-        <a href="#links">Links</a>
-      </nav>
+      <div class="social-icons">
+        <!-- Google Scholar using a person emoji -->
+        <a href="https://scholar.google.com/citations?user=QO6LJz0AAAAJ&hl=en&oi=sra" target="_blank" title="Google Scholar">
+          👤
+        </a>
+        <!-- LinkedIn using inline SVG -->
+        <a href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="#0077b5" viewBox="0 0 24 24">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.446-2.136 2.941v5.665H9.352V9h3.414v1.561h.049c.476-.9 1.637-1.85 3.369-1.85 3.604 0 4.27 2.371 4.27 5.455v6.285zM5.337 7.433a2.067 2.067 0 1 1 0-4.134 2.067 2.067 0 0 1 0 4.134zm1.777 13.019H3.56V9h3.554v11.452zM22.225 0H1.771C.792 0 0 .771 0 1.723v20.549C0 23.229.792 24 1.771 24h20.451C23.206 24 24 23.229 24 22.272V1.723C24 .771 23.206 0 22.225 0z"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </header>
 
-  <!-- Introduction -->
+  <!-- Intro Section with Profile Image and Lilac Background -->
   <section class="container intro">
+    <!-- Profile Image: Upload your image into your repository (e.g., in an "images" folder) and update the path below -->
+    <img class="profile-img" src="profile.png" alt="Miranda Miao" />
     <h2>Welcome!</h2>
     <p>
-      I am <strong>Miranda Miao</strong>, a first-year Master's student at the University of Pennsylvania in the Computer Information Science Department. 
-      I am deeply fascinated by the theoretical underpinnings of LLMs —specifically how they maintain truthfulness, uphold fairness, 
-      and develop robust reasoning capabilities. 
+      I am <strong>Miranda Miao</strong>, a first-year Master's student at the University of Pennsylvania in the Computer Information Science Department.
+      I am deeply fascinated by the theoretical underpinnings of large language models (LLMs)—specifically, the intricate dance of truthfulness, fairness, and sophisticated model reasoning.
+      My research delves into the complex thought processes of LLMs, with a current focus on multi-lingual reasoning that bridges diverse linguistic and cultural contexts.
       <br><br>
-      Currently, I’m working on a <em>multi-lingual reasoning</em> project to explore how LLMs reason when utilizing different languages. 
-      I publish under my Chinese name, <strong>Muqing Miao</strong> (<em>meaning “growing 🌱 in ☀️”</em>), 
-      in honor of my parents, who did not have the opportunity to attend college.
+      I publish under my Chinese name, <strong>Muqing Miao</strong> (<em>meaning “growing 🌱 in ☀️”</em>), in honor of my parents, who never had the opportunity to attend college.
     </p>
   </section>
 
@@ -208,7 +207,7 @@
         <p>
           The paradigm of retrieval-augmented generation (RAG) helps mitigate hallucinations of large language models (LLMs). 
           However, RAG also introduces biases contained within the retrieved documents. These biases can be amplified in scenarios 
-          which are multilingual and culturally-sensitive, such as territorial disputes. In this paper, we introduce BordIRLines, 
+          which are multilingual and culturally sensitive, such as territorial disputes. In this paper, we introduce BordIRLines, 
           a benchmark consisting of 720 territorial dispute queries paired with 14k Wikipedia documents across 49 languages. 
           To evaluate LLMs' cross-lingual robustness for this task, we formalize several modes for multilingual retrieval. 
           Our experiments on several LLMs reveal that retrieving multilingual documents best improves response consistency and 
@@ -221,19 +220,6 @@
         <a class="button" href="https://arxiv.org/abs/2410.01171" target="_blank">View PDF</a>
       </div>
 
-    </div>
-  </section>
-
-  <!-- Links Section -->
-  <section class="container" id="links">
-    <h2 class="section-title">Connect with Me</h2>
-    <div class="links-grid">
-      <a class="link-button" href="https://scholar.google.com/citations?user=QO6LJz0AAAAJ&hl=en&oi=sra" target="_blank">
-        Google Scholar
-      </a>
-      <a class="link-button" href="https://www.linkedin.com/in/miranda-miao-09289b104/" target="_blank">
-        LinkedIn
-      </a>
     </div>
   </section>
 
