@@ -1,11 +1,195 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Welcome to my GitHub Pages site</title>
+  <meta charset="utf-8" />
+  <title>Your Name - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Optional: Use a Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+  <style>
+    /* Global Reset/Defaults */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 1rem;
+    }
+    header .site-title {
+      margin: 0;
+      font-size: 1.75rem;
+      font-weight: 600;
+    }
+    header nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+    }
+    header nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Intro Section */
+    .intro {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      text-align: center;
+    }
+    .intro h1 {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+    .intro p {
+      margin-bottom: 1rem;
+      color: #666;
+    }
+
+    /* Cards Section */
+    .cards-section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .cards-section h2 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+    /* Card */
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 1rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      margin: 0.5rem 0 1rem;
+      color: #555;
+    }
+    .card .card-meta {
+      font-size: 0.85rem;
+      color: #999;
+    }
+    .card .button {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background-color: #3f51b5;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .card .button:hover {
+      background-color: #32408f;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 2rem;
+      padding: 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+      border-top: 1px solid #ddd;
+    }
+  </style>
 </head>
 <body>
-  <h1>Hello from mirandamiao.github.io!</h1>
-  <p>This is my first GitHub Pages website.</p>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div style="max-width: 900px; margin: 0 auto; padding: 0 1rem; display: flex; align-items: center; justify-content: space-between;">
+      <h1 class="site-title">Your Name</h1>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Posts</a>
+        <a href="#">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Intro Section -->
+  <section class="intro">
+    <h1>Hi, I'm [Your Name] <span style="font-size:1.2em;">👋</span></h1>
+    <p>Short bio: where you work, your interests, or a quick welcome message.</p>
+  </section>
+
+  <!-- Cards Section (Papers, Projects, etc.) -->
+  <section class="cards-section">
+    <h2>Recent Papers</h2>
+    <div class="cards-grid">
+
+      <!-- Card #1 -->
+      <div class="card">
+        <h3>Paper Title #1</h3>
+        <p class="card-meta">Conference/Journal • Date</p>
+        <p>
+          Brief summary or abstract. What’s the main topic? Why is it interesting?
+        </p>
+        <a class="button" href="https://example.com/paper1.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <!-- Card #2 -->
+      <div class="card">
+        <h3>Paper Title #2</h3>
+        <p class="card-meta">Conference/Journal • Date</p>
+        <p>
+          Brief summary or abstract. You can describe your main findings or approach here.
+        </p>
+        <a class="button" href="https://example.com/paper2.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <!-- (Optional) Card #3 - Duplicate this block if you want a third panel
+      <div class="card">
+        <h3>Paper Title #3</h3>
+        <p class="card-meta">Conference/Journal • Date</p>
+        <p>
+          Brief summary or abstract. 
+        </p>
+        <a class="button" href="#" target="_blank">View PDF</a>
+      </div>
+      -->
+
+    </div>
+
+    <!-- Optional 'More' link -->
+    <div style="margin-top: 1rem;">
+      <a href="#" class="button" style="background-color: #ff9800;">More Papers</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Created by [Your Name] <br>
+      © 2024 [Your Name]. All rights reserved.
+    </p>
+  </footer>
+
 </body>
 </html>
